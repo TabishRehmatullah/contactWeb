@@ -1,0 +1,163 @@
+<!-- <div class="flex h-screen">
+  <div class="w-[50%]">
+    <form (ngSubmit)="onFormSubmit()" [formGroup]="contactForm" class="px-4">
+      <h1 class="py-10 font-extrabold text-5xl">
+        Contactly
+      </h1>
+      <div class="mt-2">
+        <label for="name" class=" font-bold">Name</label>
+        <input type="text" class="w-full p-2 border-2 rounded-sm mt-2" formControlName="name">
+      </div>
+
+      <div class="mt-2">
+        <label for="email" class=" font-bold">Email</label>
+        <input type="email" class="w-full p-2 border-2 rounded-sm mt-2" formControlName="email">
+      </div>
+
+      <div class="mt-2">
+        <label for="Phone" class=" font-bold">Phone</label>
+        <input type="text" class="w-full p-2 border-2 rounded-sm mt-2" formControlName="phone">
+      </div>
+
+      <div class="mt-2">
+        <label for="favorite" class="flex items-center font-bold">
+          <input type="checkbox" formControlName="favorite" class="h-4 w-4">
+          <span>favorite</span>
+        </label>
+        
+      </div>
+
+      <div class="mt-2">
+       <button type="submit" class="bg-slate-800 text-white px-4 py-2 rounded-sm w-full"> Save Contact</button>
+      </div>
+    </form>
+
+  </div>
+  <div class="w-[50%] overflow-auto">
+    @if(contacts$ | async; as contacts){
+      @if(contacts.length>0){
+        <ul>
+          @for(items of contacts; track $index){
+         <li class="p-2 bg-slate-100 border-b-2 border-slate-200">
+          <span class="font-light text-3xl">
+            {{items.name}}
+          </span>
+          <div class="flex gap-10 mt-4">
+            <span class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z" />
+              </svg>
+              
+              <span class="ms-2">
+                {{items.email}}
+              </span>
+            </span>
+
+            <span class="flex items-center">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+              </svg>
+              
+              <span class="ms-2">
+                {{items.phone}}
+              </span>
+            </span>
+          </div>
+
+          <div class="mt-4 flex w-full gap-4">
+            <a class="bg-emerald-400 py-1 px-2 rounded-sm cursor-pointer" href="{{'tel:' + items.phone }}">
+              
+              
+            </a>
+
+            <button class="bg-slate-50 text-dark py-2 px-4 rounded-sm" type="button" (click)="onDelete(items.id)">
+             
+              
+            </button>
+
+          </div>
+
+         </li>
+    
+        }
+      </ul>
+      }
+      @else {
+        <p>no contacts found...</p>
+      }
+    }
+  </div>
+</div>
+ -->
+
+ <div class="flex h-screen bg-gray-50">
+  <div class="w-1/2 p-10 bg-white shadow-lg rounded-md">
+    <form (ngSubmit)="onFormSubmit()" [formGroup]="contactForm" class="space-y-6">
+      <h1 class="text-6xl font-extrabold text-gray-800">
+        Contactly
+      </h1>
+      <div class="mt-6">
+        <label for="name" class="block text-lg font-bold text-gray-700">Name</label>
+        <input type="text" id="name" class="w-full p-3 mt-2 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" formControlName="name">
+      </div>
+      <div class="mt-6">
+        <label for="email" class="block text-lg font-bold text-gray-700">Email</label>
+        <input type="email" id="email" class="w-full p-3 mt-2 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" formControlName="email">
+      </div>
+      <div class="mt-6">
+        <label for="phone" class="block text-lg font-bold text-gray-700">Phone</label>
+        <input type="text" id="phone" class="w-full p-3 mt-2 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" formControlName="phone">
+      </div>
+      <div class="mt-6 flex items-center">
+        <input type="checkbox" id="favorite" formControlName="favorite" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+        <label for="favorite" class="ml-2 block text-lg font-bold text-gray-700">Favorite</label>
+      </div>
+      <div class="mt-6">
+        <button type="submit" class="w-full py-3 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+          Save Contact
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="w-1/2 p-10 overflow-auto bg-white shadow-lg rounded-md">
+    @if(contacts$ | async; as contacts){
+      @if(contacts.length > 0){
+        <ul class="space-y-4">
+          @for(items of contacts; track $index){
+            <li class="p-6 bg-gray-100 border border-gray-200 rounded-md shadow-sm">
+              <span class="block text-2xl font-light text-gray-900">
+                {{items.name}}
+              </span>
+              <div class="flex gap-10 mt-4 text-gray-700">
+                <span class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 0 1-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 0 0 1.183 1.981l6.478 3.488m8.839 2.51-4.66-2.51m0 0-1.023-.55a2.25 2.25 0 0 0-2.134 0l-1.022.55m0 0-4.661 2.51m16.5 1.615a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V8.844a2.25 2.25 0 0 1 1.183-1.981l7.5-4.039a2.25 2.25 0 0 1 2.134 0l7.5 4.039a2.25 2.25 0 0 1 1.183 1.98V19.5Z" />
+                  </svg>
+                  {{items.email}}
+                </span>
+                <span class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                  </svg>
+                  {{items.phone}}
+                </span>
+              </div>
+              <div class="mt-4 flex space-x-4">
+                <a class="bg-green-500 py-2 px-4 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50" href="{{'tel:' + items.phone}}">
+                  Call
+                </a>
+                <button class="bg-red-500 py-2 px-4 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50" type="button" (click)="onDelete(items.id)">
+                  Delete
+                </button>
+              </div>
+            </li>
+          }
+        </ul>
+      }
+      @else {
+        <p class="text-gray-700">No contacts found...</p>
+      }
+    }
+  </div>
+</div>

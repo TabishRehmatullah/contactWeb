@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ZhiKxpYjaUSDt5gWZkpKN9mtinc0tOqpe/szqekEg60=",
+  "Source": "Contactly.Server",
+  "BasePath": "_content/Contactly.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
